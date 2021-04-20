@@ -1,5 +1,3 @@
-using System;
-
 namespace DesignPatterns
 {
     public interface ICalculo {

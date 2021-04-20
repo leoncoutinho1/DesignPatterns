@@ -3,12 +3,12 @@ using System;
 namespace DesignPatterns
 {
     public class Comanda {
-        
-        private ICalculo comandaCalculo;
-        private double total {
-            get => total;
-            set => total = value;
+        private double _total;
+        public double total {
+            get => _total;
         }
+        private ICalculo comandaCalculo;
+        
         
         // public double getTotal() {
         //     return total;
@@ -22,7 +22,7 @@ namespace DesignPatterns
         }
 
         public void AdicionaBebida(double valor){
-            total += comandaCalculo.calcular(valor);
+            _total += comandaCalculo.calcular(valor);
         }        
     } 
 }

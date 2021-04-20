@@ -2,9 +2,8 @@
 
 namespace DesignPatterns
 {
-    public class Program {
-        
-        static void Main() {
+    public class PatternStrategy {
+        static void Main1() {
             CalculoNormal cn = new CalculoNormal();
             CalculoHappyHour chh = new CalculoHappyHour();
 
@@ -13,8 +12,10 @@ namespace DesignPatterns
             comanda.AdicionaBebida(5);
             comanda.AdicionaBebida(7.5);
             comanda.AdicionaBebida(7.5);
-
-            comanda.setComandaCalculo(chh);
+            if (DateTime.Now.TimeOfDay > TimeSpan.FromHours(23)) {
+                comanda.setComandaCalculo(chh);
+            }
+            
 
             comanda.AdicionaBebida(5);
 
